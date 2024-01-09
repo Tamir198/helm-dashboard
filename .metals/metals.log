@@ -1,0 +1,8 @@
+2024.01.08 20:16:10 INFO  Started: Metals version 1.2.0 in folders 'C:\Open Source\forked-helm-dashboard\helm-dashboard' for client Visual Studio Code 1.85.1.
+2024.01.08 20:16:16 WARN  Build server is not auto-connectable.
+2024.01.08 20:16:16 WARN  no build tool detected in workspace 'C:\Open Source\forked-helm-dashboard\helm-dashboard'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+ינו׳ 08, 2024 8:29:15 אחה״צ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2024.01.08 23:43:42 INFO  Shutting down server
+2024.01.08 23:43:42 INFO  shutting down Metals
+2024.01.08 23:43:42 INFO  Exiting server
