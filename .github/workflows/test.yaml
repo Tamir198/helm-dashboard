@@ -3,26 +3,26 @@ name: Cypress Run Tests
 on: push
 
 jobs:
-  cypress-run-test:
+  cypress-run:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
       - name: Install dependencies
         run: npm ci
         working-directory: ./frontend
+
       - name: Build and start
-      - name: NPM install
-        run: npm i
-      - name: NPM start
-        run: npm start
+        run: |
+          npm i
+          npm start
         working-directory: ./frontend
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-        working-directory: ./frontend
