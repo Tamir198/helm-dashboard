@@ -21,7 +21,7 @@ jobs:
       - name: Build and start
         run: |
           npm ci
-          npm start
+          npm run start
         working-directory: ./frontend
 
       - name: Cypress run
