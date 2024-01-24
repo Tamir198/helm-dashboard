@@ -1,3 +1,7 @@
+name: Cypress Run Tests
+
+on: push
+
 jobs:
   cypress-run-test:
     runs-on: ubuntu-22.04
