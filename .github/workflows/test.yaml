@@ -1,12 +1,11 @@
 name: Cypress Run Tests
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - "*"
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
