@@ -1,7 +1,12 @@
 name: Cypress Run Tests
 
-on: push
-
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -13,6 +18,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: frontend-artifact
+          path: ./frontend
 
       - name: Install dependencies
         run: npm ci

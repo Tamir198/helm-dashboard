@@ -32,6 +32,12 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
+      - name: Create artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-artifact
+          path: ./frontend/dist
+
       # Golang part
       - name: Set up Go
         uses: actions/setup-go@v3
