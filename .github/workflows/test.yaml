@@ -2,7 +2,7 @@ name: Cypress Run Tests
 
 on:
   workflow_run:
-    workflows: ["Build"]
+    workflows: ["build"]
     types:
       - completed
 
