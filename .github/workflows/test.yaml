@@ -1,6 +1,13 @@
 name: Cypress Run Tests
 
+
 on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
   workflow_run:
     workflows: ["build"]
     types:
