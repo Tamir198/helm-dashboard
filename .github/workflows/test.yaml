@@ -1,12 +1,12 @@
 name: Cypress Run Tests
 
-
 on:
   workflow_run:
     workflows: [build, Build]
     branches: [main]
     types:
       - completed
+
 
 jobs:
   cypress-run:
