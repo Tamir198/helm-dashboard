@@ -64,6 +64,9 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        with:
+          working-directory: ./frontend
+
 
   image:
     runs-on: ubuntu-latest
