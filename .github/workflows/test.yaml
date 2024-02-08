@@ -1,17 +1,16 @@
 name: Cypress Run Tests
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - "*"
+  workflow_run:
+    workflows: ["build"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
-    needs: Build
+    # needs: Build
     steps:
       - name: Checkout
         uses: actions/checkout@v4
