@@ -1,21 +1,14 @@
 name: Cypress Run Tests
 
-
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - "*"
-  workflow_run:
-    workflows: ["build"]
-    types:
-      - completed
 
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,12 +17,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: frontend-artifact
-          path: ./frontend
 
       - name: Install dependencies
         run: npm ci
