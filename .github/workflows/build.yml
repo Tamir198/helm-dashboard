@@ -32,11 +32,17 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: ./frontend
+
+
       # Golang part
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: "1.20"
+          go-version: "1.21"
       - name: Unit tests
         run: |
           go test -v -race ./... -covermode=atomic -coverprofile=coverage.out # Run all the tests with the race detector enabled
@@ -61,16 +67,6 @@ jobs:
           name: binaries
           path: dist/
           retention-days: 1
-
-      - name: NPM run dev
-        run: npm run dev
-        working-directory: ./frontend
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          working-directory: ./frontend
-
 
   image:
     runs-on: ubuntu-latest
